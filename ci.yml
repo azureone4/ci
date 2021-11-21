@@ -138,6 +138,7 @@ jobs:
       - name: Setup Boost
         shell: cmd
         run: |
+          lscpu
           echo GITHUB_REPOSITORY: %GITHUB_REPOSITORY%
           set LIBRARY=pfr
           echo LIBRARY: %LIBRARY%
